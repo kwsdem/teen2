@@ -30,16 +30,12 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy 
   has_many :events, dependent: :destroy 
-  has_many :users, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
   mount_uploader :cover, AvatarUploader
 
   validates_presence_of :name
-  validates_presence_of :content
-  validates_presence_of :user
-  validates_presence_of :avatar
-  validates_presence_of :cover
+
 
   self.per_page = 10
 
